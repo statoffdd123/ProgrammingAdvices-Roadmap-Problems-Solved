@@ -1,0 +1,55 @@
+#pragma once
+
+#include <iostream>
+#include <string>
+
+namespace myfunactions
+{
+
+	int ReadNumber(std::string message)
+	{
+		int Number = 0;
+		std::cout << message << " : ";
+		std::cin >> Number;
+		return Number;
+	}
+
+	int ReadfloatNumber(std::string message)
+	{
+		float Number = 0;
+		std::cout << message << " : ";
+		std::cin >> Number;
+		return float(Number);
+	}
+
+	int ReaddoubeleNumber(std::string message)
+	{
+		double Number = 0;
+		std::cout << message << " : ";
+		std::cin >> Number;
+		return double(Number);
+	}
+
+	std::string Readstring(std::string message)
+	{
+		std::string stringer = "";
+		std::getline(std::cin, stringer);
+		return stringer;
+	}
+
+	int randomNum(int from, int to)
+	{
+		return rand() % (to - from + 1) + from;
+	}
+
+	int mySqrt(int sqrt)
+	{
+		return pow(sqrt, 0.5);
+	}
+
+	int evenOrOdd(int number)
+	{
+		return number % 2;
+	}
+
+}2026-02-19 7:43
