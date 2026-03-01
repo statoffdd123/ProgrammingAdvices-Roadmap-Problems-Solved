@@ -1,0 +1,14 @@
+#include<iostream>
+
+int main()
+{
+	int array1[] = { 1,4,3 };
+	
+	for (int i : array1)
+	{
+		std::cout << "hi this is the " << i << " message" << std::endl;
+
+		}// i will take the value ,IT WILL NOT Get ADDED A 1
+	
+	return 0;
+}
