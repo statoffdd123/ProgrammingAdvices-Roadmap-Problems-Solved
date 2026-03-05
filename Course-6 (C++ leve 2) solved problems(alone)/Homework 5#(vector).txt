@@ -1,0 +1,37 @@
+#include <iostream>
+#include <vector>
+
+std::vector<int> ReadNumber(std::vector<int>& Numbers)
+{
+    int Number = 0;
+    std::string State = "";
+    do
+    {
+        std::printf("Please Enter The Number You Want?\n");
+        std::cin >> Number;
+        Numbers.push_back(Number);
+        std::printf("\ndo you want to add more? y/n: ");
+        std::cin >> State;
+
+    } while (State == "y" || State == "Y");
+    
+    return Numbers;
+}
+void PrintNumbers(std::vector<int>& Numbers)
+{    
+    
+    for (int & id: Numbers)
+    {
+
+        printf("%d", id);
+
+    }
+
+}
+int main()
+{
+    std::vector<int> Numbers;
+    ReadNumber(Numbers);
+    PrintNumbers(Numbers);
+    return 0;
+} 
