@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+int randomNum(int from, int to)
+{
+    return rand() % (to - from + 1) + from;
+}
+{
+    for (int i = 0; i < 3; i++)
+    {
+        for (int y = 0; y < 3; y++)
+        {
+            x[i][y] = randomNum(0, 100);
+        }
+    }
+}
+void Print_Array(int x[3][3])
+{
+    for (int i = 0; i < 3; i++)
+    {
+        for (int y = 0; y < 3; y++)
+        {
+            std::cout << x[i][y] << "\t";
+        }
+        std::cout << std::endl;
+    }
+}
+int main() {
+    
+    int x[3][3];
+    Fill_Array(x);
+    Print_Array(x);   
+    
+    return 0;
+}
