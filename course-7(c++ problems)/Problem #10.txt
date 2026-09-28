@@ -1,0 +1,60 @@
+#include <iostream>
+#include <string>
+#include <iomanip>
+using namespace std;
+int randum(int from, int to)
+{
+	return rand() % (to - from + 1) + 1;
+}
+void FillMatrixWithRandomNumbers(int arr[3][3], short Rows, short	Cols)
+{
+	
+	for (short i = 0; i < Rows; i++)
+	{
+		for (short j = 0; j < Cols; j++)
+		{
+			
+			arr[i][j] = randum(1,10);
+		}
+	}
+}
+void PrintMatrix(int arr[3][3], short Rows, short Cols)
+{
+	for (short i = 0; i < Rows; i++)
+	{
+		for (short j = 0; j < Cols; j++)
+		{
+			cout << setw(3) << arr[i][j] << " ";
+		}
+		cout << "\n";
+	}
+}
+
+int filltMatrixSum(int arr[3][3], short Rows, short Cols)
+{
+	int Sum = 0;
+	for (short i = 0; i < Rows; i++)
+	{
+		for (short j = 0; j < Cols; j++)
+		{
+			Sum += arr[i][j];
+		}
+		cout << "\n";
+	}
+	return Sum;
+}
+
+int main()
+{
+	((unsigned)time(NULL));
+	int arr1[3][3], sum = 0;
+	FillMatrixWithRandomNumbers(arr1, 3, 3);
+	
+	cout << "\nMatrix1:\n";
+	PrintMatrix(arr1, 3, 3);
+	cout << "\n";	
+	sum = filltMatrixSum(arr1, 3, 3);
+	cout << "\nsum of matrix:\n";
+	cout << sum;
+	system("pause>0");
+}

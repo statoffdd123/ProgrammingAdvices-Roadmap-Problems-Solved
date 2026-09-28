@@ -1,0 +1,81 @@
+#include <iostream>
+#include <string>
+#include <iomanip>
+using namespace std;
+int randum(int from, int to)
+{
+	return rand() % (to - from + 1) + 1;
+}
+void FillMatrixWithRandomNumbers(int arr[3][3], short Rows, short	Cols)
+{
+	
+	for (short i = 0; i < Rows; i++)
+	{
+		for (short j = 0; j < Cols; j++)
+		{
+			
+			arr[i][j] = randum(1,10);
+		}
+	}
+}
+void PrintMatrix(int arr[3][3], short Rows, short Cols)
+{
+	for (short i = 0; i < Rows; i++)
+	{
+		for (short j = 0; j < Cols; j++)
+		{
+			cout << setw(3) << arr[i][j] << " ";
+		}
+		cout << "\n";
+	}
+}
+
+void PrintMatrix1(int arr[3][3], short Rows, short Cols)
+{
+	for (short i = 1; i < Rows; i++)
+	{
+		if (i == 2)
+		{
+			continue;
+		}
+		for (short j = 0; j < Cols; j++)
+		{
+			
+			cout << setw(3) << arr[i][j] << " ";
+		}
+		cout << "\n";
+	}
+}
+void PrintMatrix2(int arr[3][3], short Rows, short Cols)
+{
+	for (short i = 0; i < Rows; i++)
+	{
+		for (short j = 1; j < 3; j++)
+		{
+			if (j == 2)
+			{
+				continue;
+			}
+			cout << setw(3) << arr[i][j] << " ";
+		}
+		
+	}
+}
+int main()
+{
+	((unsigned)time(NULL));
+	int arr1[3][3];
+	FillMatrixWithRandomNumbers(arr1, 3, 3);
+	
+	cout << "\nMatrix1:\n";
+	PrintMatrix(arr1, 3, 3);
+	cout << "\n";
+	cout << "\nmiddle row of Matrix1:\n";
+	PrintMatrix1(arr1, 3, 3);
+	
+	cout << "\nmiddle col of Matrix1:\n";
+	PrintMatrix2(arr1, 3, 3);
+
+	
+	system("pause>0");
+}

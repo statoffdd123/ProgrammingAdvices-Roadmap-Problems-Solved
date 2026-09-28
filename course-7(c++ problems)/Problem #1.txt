@@ -1,38 +1,50 @@
 #include <iostream>
+#include <vector>;
+#include <iomanip>
+using namespace std;
+{
+	return rand() % (to - from + 1) + from;
+}
+void Fill_Matrix(int Numbers[3][3])
+{
 
-int Rand(int From, int To)
-{
-  return rand() % (To - From + 1) + From;
-}
-void Fill_matrix(int arr[3][3], int Rows, int Columns)
-{
-	for (int i = 0; i < Rows; i++)
+	for (int i = 0; i < 3; i++)
 	{
-		for (int y = 0; y < Columns; y++)
+
+		for (int x = 0; x < 3; x++)
 		{
-			arr[i][y] = Rand(1, 100);
+
+			Numbers[i][x] = randnum(0, 100);
+
 		}
+
 	}
+
 }
-void Print_matrix(int arr[3][3], int Rows, int Columns)
+void Print_Matrix(int Numbers[3][3])
 {
-	for (int i = 0; i < Rows; i++)
+
+	for (int i = 0; i < 3; i++)
 	{
-		for (int y = 0; y < Columns; y++)
+
+		for (int x = 0; x < 3; x++)
 		{
-			std::cout << arr[i][y] << "\t";
+
+			cout << setw(3) << Numbers[i][x];
+
 		}
-		std::cout << std::endl;
+		cout << endl;
 	}
+
 }
 int main()
 {
 	srand((unsigned)time(NULL));
-	int RandomMatrix[3][3];
+	int Numbers[3][3];
 
-	Fill_matrix(RandomMatrix, 3, 3);
-	std::cout << "here is a 3X3 Random Numbers Matrix:\n";
-	Print_matrix(RandomMatrix, 3, 3);
+	Fill_Matrix(Numbers);
+	Print_Matrix(Numbers);
+
 
 	return 0;
 }

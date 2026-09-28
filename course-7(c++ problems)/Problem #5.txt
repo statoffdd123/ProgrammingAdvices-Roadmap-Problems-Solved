@@ -1,0 +1,76 @@
+#include <iostream>
+#include <vector>
+#include <iomanip>
+#include <string>
+using namespace std;
+int randnum(int from, int to)
+{
+	return rand() % (to - from + 1) + from;
+}
+void Fill_Matrix(int Numbers[3][3])
+{
+
+	for (int i = 0; i < 3; i++)
+	{
+
+		for (int x = 0; x < 3; x++)
+		{
+
+			Numbers[i][x] = randnum(0, 100);
+
+		}
+
+	}
+
+}
+void Print_Matrix(int Numbers[3][3])
+{
+
+	for (int i = 0; i < 3; i++)
+	{
+
+		for (int x = 0; x < 3; x++)
+		{
+
+			cout << setw(3) << Numbers[i][x];
+
+		}
+		cout << endl;
+	}
+
+}
+void Sum_Each_Col(int Numbers[3][3]) {
+
+	printf("\n\nthe Sum Of Each Row Is;");
+
+	short* y;
+	y = new short;
+	*y = 0;
+	for (int i = 0; i < 3; i++)
+	{
+
+		for (int x = 0; x < 3; x++)
+		{
+			*y += Numbers[x][i];
+			
+		}
+		printf("\nRow %d Equals = %d\n", i + 1, *y);
+		*y = 0;
+	}
+
+}
+int main()
+{
+	srand((unsigned)time(NULL));
+	int Numbers[3][3];
+
+	Fill_Matrix(Numbers);
+	Print_Matrix(Numbers);
+	Sum_Each_Col(Numbers);
+	system("pause>0");
+
+
+	t
+
+	return 0;
+}
